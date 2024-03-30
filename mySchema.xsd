@@ -1,0 +1,132 @@
+<!-- This defines all the XML elements needed for a game-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="local">
+
+    <xsd:simpleType name="monetaryValueType">
+        <xsd:restriction base='decimal'>
+            <xsd:fractionDigits value="2"/>
+        </xsd:restriction>        
+    </xsd:simpleType>
+ 
+    <xsd:complexType name="fullnameType">
+        <xsd:sequence>
+            <xsd:element name="firstname" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="lastname" type="xsd:string" minOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="fullnameExtendedType">
+        <xsd:complexContent>
+            <xsd:extension base="fullnameType">
+                <xsd:sequence>
+                    <xsd:element name="middlename" type="xsd:string" minOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="designerName" type="fullname"/>
+    <xsd:element name="designerNameExtended" type="fullnameExtended"/>
+    
+    <xsd:simpleType name="popularityRatingType">
+        <xsd:restriction base='decimal'>
+            <xsd:totalDigits value="2"/>
+            <xsd:fractionDigits value="1"/>
+            <xsd:minInclusive value="0.0"/>
+            <xsd:maxInclusive value="5.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="cardInfoType">
+        <xsd:restriction>
+            <xsd:totalDigits value="4"/>
+            <xsd:fractionDigits value="0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="emailInfoType">
+        <xsd:restriction>
+            <!-- RegExp to assert that an email must be present-->
+            <xsd:pattern value="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="paymentType">
+        <xsd:choice>
+            <xsd:element ref="card" type="cardInfoType"/>
+            <xsd:element ref="paypal" type="emailInfoType"/>
+        </xsd:choice>
+    </xsd:complexType>
+
+    <xsd:simpleType name="ageRatingType">
+        <xsd:annotation>
+            <xsd:documentation>
+                This defines the ERSB rating system for a game. It is as follows:
+                    - E    : For everyone
+                    - E10+ : For ages 10+
+                    - T    : For teens. Generally 13+
+                    - M    : For ages 17+
+                    - AO   : For adults only. 18+
+                    - RP   : Not yet assigned an ESRB rating
+                    - RP17+: Not yet assigned an ESRB rating, but it is anticipated to be 17+
+                    More information can be found here: https://www.esrb.org/ratings-guide/ 
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="E"/>
+            <xsd:enumeration value="E10+"/>
+            <xsd:enumeration value="T"/>
+            <xsd:enumeration value="M"/>
+            <xsd:enumeration value="AO"/>
+            <xsd:enumeration value="RP"/>
+            <xsd:enumeration value="RP17+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="gameType">
+        <xsd:annotation>
+            <xsd:documentation>
+                This is the base type for a "game" object.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Title" type="xsd:string"/>
+            <xsd:choice maxOccurs="unbounded">
+                <xsd:element name="designerName" type="fullnameType"/>
+                <xsd:element name="designerNameExtended" type="fulllnameExtendedType"/>
+            </xsd:choice>
+            <xsd:element name="isInstaleld" type="xsd:boolean"/>
+            <xsd:element name="price" type="monetaryValue"/>
+            <xsd:element name="esrbRating" type="ageRatingType"/>
+            <xsd:element name="gameRating" type="popularityRatingType">
+            <xsd:element name="genre" type="xsd:string">
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="gameSeries">
+        <xsd:attribute name="Title" type="xsd:string"/>
+        <xsd:sequence>
+            <xsd:element name="atomicGame" type="gameType" maxOccurs="unbounded">
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- Below are definable Elements -->
+    <xsd:element name="Game" type="gameType"/>
+    <xsd:element name="Series" type="gameSeries"/>
+    
+    <xsd:element name="Library">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:choice>
+                    <xsd:element name="Series" type="gameSeries" maxOccurs="unbounded"/>
+                    <xsd:element name="Game" type="gameType" maxOccurs="unbounded"/>
+                </xsd:choice>
+
+                <xsd:element name="Owner" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
