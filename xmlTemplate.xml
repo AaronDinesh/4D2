@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Library xmlns="local" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="local mySchema.xsd">
+	
+	<Owner>Johnny Phones</Owner>
+	
+	<Media>
+		<Series seriesTitle="Kingdoom" xmlns="local">
+			<Game>
+				<Title>Kingdoom I</Title>
+				<designerName>
+					<firstname>Conflict</firstname>
+					<lastname>Nerd</lastname>
+				</designerName>
+				<isInstalled>true</isInstalled>
+				<price>69.99</price>
+				<paymentMethod>				
+					<paypal>johnnyphones@gmail.com</paypal>
+				</paymentMethod>
+				<esrbRating>T</esrbRating>
+				<gameRating>4.5</gameRating>
+				<genre>Action-Adventure</genre>
+			</Game>
+			
+			<Game>
+				<Title>Kingdoom II: Longsword</Title>
+				<designerName>
+					<firstname>Conflict</firstname>
+					<lastname>Nerd</lastname>
+				</designerName>
+				<isInstalled>true</isInstalled>
+				<price>69.99</price>
+				<paymentMethod>
+					<card>3060.7653</card>
+				</paymentMethod>
+				<esrbRating>T</esrbRating>
+				<gameRating>3.8</gameRating>
+				<genre>Action-Adventure</genre>
+			</Game>
+			
+			<Game>
+				<Title>Kingdoom III: Sabre</Title>
+				<designerName>
+					<firstname>Conflict</firstname>
+					<lastname>Nerd</lastname>
+				</designerName>
+				<isInstalled>false</isInstalled>
+				<price>69.99</price>
+				<paymentMethod>
+					<paypal>johnnyphones@gmail.com</paypal>
+				</paymentMethod>
+				<esrbRating>T</esrbRating>
+				<gameRating>3.8</gameRating>
+				<genre>Action-Adventure</genre>
+			</Game>
+			
+			<Game>
+				<Title>Kingdoom IV: Excalibur</Title>
+				<designerName>
+					<firstname>Conflict</firstname>
+					<lastname>Nerd</lastname>
+				</designerName>
+				<isInstalled>false</isInstalled>
+				<price>89.99</price>
+				<paymentMethod>
+					<card>3060.7653</card>
+				</paymentMethod>
+				<esrbRating>T</esrbRating>
+				<gameRating>4.9</gameRating>
+				<genre>Action-Adventure</genre>
+			</Game>
+		</Series>
+		
+		
+		<Game>
+			<Title>The Elder Scrolls V:Skyrim</Title>
+	
+			<designerName>
+				<firstname>Todd</firstname>
+				<lastname>Howard</lastname>
+			</designerName>
+	
+			<isInstalled>
+				true
+			</isInstalled>
+		
+			<price>39.99</price>
+			<paymentMethod>
+				<paypal>johnnyphones@gmail.com</paypal>
+			</paymentMethod>
+			<esrbRating>AO</esrbRating>
+			
+			<gameRating>5.0</gameRating>
+			
+			<genre>Fantasy</genre>
+		
+		</Game>
+	
+		<Game>
+			<Title>Shadow Quest</Title>
+			<designerNameExtended>
+				<firstname>Emily</firstname>
+				<lastname>Walker</lastname>
+				<middlename>Mary-Jane</middlename>
+			</designerNameExtended>
+			<isInstalled>false</isInstalled>
+			<price>50.99</price>
+			<paymentMethod>
+				<card>4035.1234</card>
+			</paymentMethod>
+			<esrbRating>T</esrbRating>
+			<gameRating>4.7</gameRating>
+			<genre>Action RPG</genre>
+		</Game>
+	</Media>
+</Library>

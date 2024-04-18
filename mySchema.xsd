@@ -1,10 +1,10 @@
-<!-- This defines all the XML elements needed for a game-->
-
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="local">
+
+<!-- This defines all the XML elements needed for a game-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="local" targetNamespace="local">
 
     <xsd:simpleType name="monetaryValueType">
-        <xsd:restriction base='decimal'>
+        <xsd:restriction base='xsd:decimal'>
             <xsd:fractionDigits value="2"/>
         </xsd:restriction>        
     </xsd:simpleType>
@@ -26,11 +26,11 @@
         </xsd:complexContent>
     </xsd:complexType>
 
-    <xsd:element name="designerName" type="fullname"/>
-    <xsd:element name="designerNameExtended" type="fullnameExtended"/>
+    <xsd:element name="designerName" type="fullnameType"/>
+    <xsd:element name="designerNameExtended" type="fullnameExtendedType"/>
     
     <xsd:simpleType name="popularityRatingType">
-        <xsd:restriction base='decimal'>
+        <xsd:restriction base='xsd:decimal'>
             <xsd:totalDigits value="2"/>
             <xsd:fractionDigits value="1"/>
             <xsd:minInclusive value="0.0"/>
@@ -39,23 +39,25 @@
     </xsd:simpleType>
     
     <xsd:simpleType name="cardInfoType">
-        <xsd:restriction>
-            <xsd:totalDigits value="4"/>
-            <xsd:fractionDigits value="0"/>
+        <xsd:restriction base="xsd:decimal">
+			<!--Defines the card info type. It will contains the first 4 digits and then the last 4 digits (period seperated) of the card
+				used to pay for the game. in XXXX.XXXX-->
+            <xsd:totalDigits value="8"/>
+            <xsd:fractionDigits value="4"/>
         </xsd:restriction>
     </xsd:simpleType>
 
     <xsd:simpleType name="emailInfoType">
-        <xsd:restriction>
+        <xsd:restriction base="xsd:string">
             <!-- RegExp to assert that an email must be present-->
-            <xsd:pattern value="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"/>
+            <xsd:pattern value="[^@]+@[^\.]+\..+"/>
         </xsd:restriction>
     </xsd:simpleType>
 
     <xsd:complexType name="paymentType">
         <xsd:choice>
-            <xsd:element ref="card" type="cardInfoType"/>
-            <xsd:element ref="paypal" type="emailInfoType"/>
+            <xsd:element name="card" type="cardInfoType"/>
+            <xsd:element name="paypal" type="emailInfoType"/>
         </xsd:choice>
     </xsd:complexType>
 
@@ -87,46 +89,72 @@
     <xsd:complexType name="gameType">
         <xsd:annotation>
             <xsd:documentation>
-                This is the base type for a "game" object.
+                This is the base type for a "game" object. Contains:
+                    - Title: Name of the game (Type= string)
+                - designerName / designerNameExtended: The name of the devs. Can be unlimited. (Type= fullnameType or
+                                                       fullnameExtendedType)
+                - isIntalled: Is the game installed on the system (Type= Boolean)
+                - price: The price of the game (Type= monetaryValueType)
+                - esrbRating: The ESRB Rating of the game (Type= ageRatingType)
+                - gameRating: The popularity of the game (Type= popularityRatingType)
+                - genre: The genre of the game (Type= string)
             </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="Title" type="xsd:string"/>
             <xsd:choice maxOccurs="unbounded">
                 <xsd:element name="designerName" type="fullnameType"/>
-                <xsd:element name="designerNameExtended" type="fulllnameExtendedType"/>
+                <xsd:element name="designerNameExtended" type="fullnameExtendedType"/>
             </xsd:choice>
-            <xsd:element name="isInstaleld" type="xsd:boolean"/>
-            <xsd:element name="price" type="monetaryValue"/>
+            <xsd:element name="isInstalled" type="xsd:boolean"/>
+            <xsd:element name="price" type="monetaryValueType"/>
+            <xsd:element name="paymentMethod" type="paymentType"/>
             <xsd:element name="esrbRating" type="ageRatingType"/>
-            <xsd:element name="gameRating" type="popularityRatingType">
-            <xsd:element name="genre" type="xsd:string">
+            <xsd:element name="gameRating" type="popularityRatingType"/>
+            <xsd:element name="genre" type="xsd:string"/>
         </xsd:sequence>
     </xsd:complexType>
+    
 
-    <xsd:complexType name="gameSeries">
-        <xsd:attribute name="Title" type="xsd:string"/>
+    <xsd:complexType name="seriesType">
+        <xsd:annotation>
+            <xsd:documentation>
+                This is a type for a game series. Contains:
+                    - seriesTitle: Title of the series. (Type= string)
+                    - atomicGame : An instance of a game. Can be unlimited. (Type= gameType) 
+            </xsd:documentation>
+        </xsd:annotation>
+
         <xsd:sequence>
-            <xsd:element name="atomicGame" type="gameType" maxOccurs="unbounded">
+            <xsd:element name="Game" type="gameType" maxOccurs="unbounded"/>
         </xsd:sequence>
+        <xsd:attribute name="seriesTitle" type="xsd:string"/>
     </xsd:complexType>
+    
+    <xsd:complexType name="mediaType">
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="Game" type="gameType" maxOccurs="unbounded"/>
+			<xsd:element name="Series" type="seriesType" maxOccurs="unbounded"/>
+		</xsd:choice>
+	</xsd:complexType>
 
 
     <!-- Below are definable Elements -->
     <xsd:element name="Game" type="gameType"/>
-    <xsd:element name="Series" type="gameSeries"/>
+    <xsd:element name="Series" type="seriesType"/>
     
     <xsd:element name="Library">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:choice>
-                    <xsd:element name="Series" type="gameSeries" maxOccurs="unbounded"/>
-                    <xsd:element name="Game" type="gameType" maxOccurs="unbounded"/>
-                </xsd:choice>
+        <xsd:complexType mixed="true">
+            <xsd:annotation>
+                <xsd:documentation>
+                    This is an element that can store multiple Series and or Games. Think of a Steam Game Library
+                </xsd:documentation>
+            </xsd:annotation>
 
-                <xsd:element name="Owner" type="xsd:string"/>
+            <xsd:sequence>
+                <xsd:element name="Owner" type="xsd:string" default="Jane Doe" maxOccurs="1"/>
+                <xsd:element name="Media" type="mediaType"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
 </xsd:schema>

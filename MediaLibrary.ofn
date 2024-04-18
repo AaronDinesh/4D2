@@ -1,0 +1,180 @@
+Prefix(:=<http://www.semanticweb.org/aaron/ontologies/2024/3./>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library>
+Annotation(rdfs:comment "A ontology to descibe all the things that can be contained in a media library")
+
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Creator>))
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Developer>))
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Game>))
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Library>))
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Media>))
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Name>))
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Owner>))
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person>))
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Price>))
+Declaration(Class(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Series>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#contains>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#created>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#has>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#owns>))
+Declaration(DataProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#ESRB_rating>))
+Declaration(DataProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#email>))
+Declaration(DataProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#first_name>))
+Declaration(DataProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#last_name>))
+Declaration(DataProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#middle_name>))
+Declaration(DataProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#name>))
+Declaration(DataProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#price>))
+Declaration(DataProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#title>))
+Declaration(DataProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#TH_Name>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Todd_Howard>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#The_Elder_Scrolls_V:_Skyrim>))
+Declaration(AnnotationProperty(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#has>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#contains> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#contains>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#contains> "When you want to say that X is in Y")
+ObjectPropertyDomain(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#contains> owl:Thing)
+ObjectPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#contains> owl:Thing)
+DisjointObjectProperties(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#contains> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#created>)
+
+# Object Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#created> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#created>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#created> "When you want to say a person created something"@en)
+ObjectPropertyDomain(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#created> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person>)
+ObjectPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#created> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Media>)
+
+# Object Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#has> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#has>)
+
+SubObjectPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#has> owl:topObjectProperty)
+
+# Object Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#owns> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#owns>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#owns> "To say when X owns Y"@en)
+SubObjectPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#owns> owl:topObjectProperty)
+ObjectPropertyDomain(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#owns> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person>)
+ObjectPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#owns> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Media>)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#ESRB_rating> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#ESRB_rating>)
+
+SubDataPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#ESRB_rating> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value>)
+DataPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#ESRB_rating> xsd:string)
+
+# Data Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#email> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#email>)
+
+SubDataPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#email> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value>)
+DataPropertyDomain(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#email> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person>)
+DataPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#email> xsd:string)
+
+# Data Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#first_name> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#first_name>)
+
+SubDataPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#first_name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#name>)
+DataPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#first_name> xsd:string)
+DisjointDataProperties(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#first_name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#last_name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#middle_name>)
+
+# Data Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#last_name> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#last_name>)
+
+SubDataPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#last_name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#name>)
+DataPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#last_name> xsd:string)
+
+# Data Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#middle_name> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#middle_name>)
+
+SubDataPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#middle_name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#name>)
+DataPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#middle_name> xsd:string)
+
+# Data Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#name> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#name>)
+
+SubDataPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value>)
+DataPropertyDomain(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person>)
+DataPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#name> xsd:string)
+
+# Data Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#price> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#price>)
+
+SubDataPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#price> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value>)
+DataPropertyDomain(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#price> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Price>)
+DataPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#price> xsd:decimal)
+
+# Data Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#title> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#title>)
+
+SubDataPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#title> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value>)
+DataPropertyDomain(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#title> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Game>)
+DataPropertyDomain(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#title> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Series>)
+DataPropertyRange(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#title> xsd:string)
+
+# Data Property: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value> "contains a particular value"@en)
+SubDataPropertyOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#value> owl:topDataProperty)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Creator> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Creator>)
+
+SubClassOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Creator> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person>)
+
+# Class: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Developer> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Developer>)
+
+SubClassOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Developer> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Creator>)
+
+# Class: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Game> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Game>)
+
+SubClassOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Game> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Media>)
+
+# Class: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Owner> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Owner>)
+
+SubClassOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Owner> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person>)
+
+# Class: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person>)
+
+AnnotationAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#has> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Name>)
+
+# Class: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Series> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Series>)
+
+SubClassOf(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Series> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Media>)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#TH_Name> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#TH_Name>)
+
+ClassAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#TH_Name>)
+DataPropertyAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#first_name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#TH_Name> "Todd"@en)
+DataPropertyAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#last_name> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#TH_Name> "Howard"@en)
+
+# Individual: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Todd_Howard> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Todd_Howard>)
+
+ClassAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Creator> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Todd_Howard>)
+ClassAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Developer> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Todd_Howard>)
+ClassAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Person> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Todd_Howard>)
+ObjectPropertyAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#created> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Todd_Howard> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#The_Elder_Scrolls_V:_Skyrim>)
+ObjectPropertyAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#has> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Todd_Howard> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#TH_Name>)
+
+# Individual: <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#The_Elder_Scrolls_V:_Skyrim> (<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#The_Elder_Scrolls_V:_Skyrim>)
+
+ClassAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#Game> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#The_Elder_Scrolls_V:_Skyrim>)
+ObjectPropertyAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#created> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#The_Elder_Scrolls_V:_Skyrim> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#The_Elder_Scrolls_V:_Skyrim>)
+DataPropertyAssertion(<http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#title> <http://www.semanticweb.org/aaron/ontologies/2024/3/Media_Library#The_Elder_Scrolls_V:_Skyrim> "The Elder Scrolls V: Skyrim"@en)
+
+
+)

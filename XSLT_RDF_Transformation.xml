@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:l="local" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:vgo="http://purl.org/net/VideoGameOntology#" xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:schema-org="http://schema.org/" xmlns:fibo-loan-spc-crd="https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/CardAccounts/">
+	<rdf:Description rdf:about="isInstalled">
+		<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+		<rdf:label>isInstalled</rdf:label>
+		<rdf:comment>A boolean property to indicate whether a game is installed on the device.</rdf:comment>
+		<rdf:domain rdf:resource="http://schema.org/SoftwareApplication"/>
+		<rdf:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="Series">
+		<rdf:type rdf:resource="http://purl.org/dc/terms/Collection"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="Series">
+		<dcterms:isRequiredBy rdf:resource="Media"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="Library">
+		<rdf:type rdf:resource="http://purl.org/dc/terms/Collection"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="Library">
+		<dc:title>Johnny Phones's Library</dc:title>
+	</rdf:Description>
+	<rdf:Description rdf:about="Library">
+		<dc:creator>Johnny Phones</dc:creator>
+	</rdf:Description>
+	<rdf:Description rdf:about="Library">
+		<dcterms:hasPart>Owner</dcterms:hasPart>
+	</rdf:Description>
+	<rdf:Description rdf:about="Library">
+		<dcterms:requires>Owner</dcterms:requires>
+	</rdf:Description>
+	<rdf:Description rdf:about="Library">
+		<dcterms:hasPart>Media</dcterms:hasPart>
+	</rdf:Description>
+	<rdf:Description rdf:about="Library">
+		<dcterms:requires>Media</dcterms:requires>
+	</rdf:Description>
+	
+	Johnny Phones
+	
+	<rdf:Description rdf:about="Media">
+		<rdf:type rdf:resource="http://purl.org/dc/terms/Collection"/>
+	</rdf:Description><rdf:Description rdf:about="Media">
+		<dc:creator>Johnny Phones</dc:creator>
+	</rdf:Description><rdf:Description rdf:about="Media">
+		<dcterms:isRequiredBy rdf:resource="Library"/>
+	</rdf:Description><rdf:Description rdf:about="Media">
+		<dcterms:hasPart>Series</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Media">
+		<dcterms:hasPart>Game</dcterms:hasPart>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="Kingdoom">
+		<dcterms:hasPart/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom">
+		<dcterms:hasPart/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom">
+		<dcterms:hasPart/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom">
+		<dcterms:hasPart/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="Kingdoom_I">
+		<rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:title>Kingdoom_I</dcterms:title>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<vgo:creator>Conflict Nerd</vgo:creator>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<vgo:hasGameGenre rdf:resource=""/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<foaf:mbox>johnnyphones@gmail.com</foaf:mbox>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<schema-org:contentRating>T</schema-org:contentRating>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<schema-org:price>69.99</schema-org:price>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<isInstalled>true</isInstalled>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<schema-org:genre>Action-Adventure</schema-org:genre>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:hasPart>Title</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:hasPart>designerName</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:hasPart>isInstalled</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:hasPart>price</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:hasPart>paymentMethod</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:hasPart>esrbRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:hasPart>gameRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:hasPart>genre</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_I">
+		<dcterms:isRequiredBy>Series</dcterms:isRequiredBy>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:title>Kingdoom_II:_Longsword</dcterms:title>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<vgo:creator>Conflict Nerd</vgo:creator>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<vgo:hasGameGenre rdf:resource=""/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<fibo-loan-spc-crd:CardIdentificationNumber>3060</fibo-loan-spc-crd:CardIdentificationNumber>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<schema-org:contentRating>T</schema-org:contentRating>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<schema-org:price>69.99</schema-org:price>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<isInstalled>true</isInstalled>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<schema-org:genre>Action-Adventure</schema-org:genre>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:hasPart>Title</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:hasPart>designerName</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:hasPart>isInstalled</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:hasPart>price</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:hasPart>paymentMethod</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:hasPart>esrbRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:hasPart>gameRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:hasPart>genre</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_II:_Longsword">
+		<dcterms:isRequiredBy>Series</dcterms:isRequiredBy>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:title>Kingdoom_III:_Sabre</dcterms:title>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<vgo:creator>Conflict Nerd</vgo:creator>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<vgo:hasGameGenre rdf:resource=""/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<foaf:mbox>johnnyphones@gmail.com</foaf:mbox>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<schema-org:contentRating>T</schema-org:contentRating>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<schema-org:price>69.99</schema-org:price>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<isInstalled>false</isInstalled>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<schema-org:genre>Action-Adventure</schema-org:genre>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:hasPart>Title</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:hasPart>designerName</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:hasPart>isInstalled</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:hasPart>price</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:hasPart>paymentMethod</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:hasPart>esrbRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:hasPart>gameRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:hasPart>genre</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_III:_Sabre">
+		<dcterms:isRequiredBy>Series</dcterms:isRequiredBy>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:title>Kingdoom_IV:_Excalibur</dcterms:title>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<vgo:creator>Conflict Nerd</vgo:creator>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<vgo:hasGameGenre rdf:resource=""/>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<fibo-loan-spc-crd:CardIdentificationNumber>3060</fibo-loan-spc-crd:CardIdentificationNumber>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<schema-org:contentRating>T</schema-org:contentRating>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<schema-org:price>89.99</schema-org:price>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<isInstalled>false</isInstalled>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<schema-org:genre>Action-Adventure</schema-org:genre>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:hasPart>Title</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:hasPart>designerName</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:hasPart>isInstalled</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:hasPart>price</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:hasPart>paymentMethod</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:hasPart>esrbRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:hasPart>gameRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:hasPart>genre</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Kingdoom_IV:_Excalibur">
+		<dcterms:isRequiredBy>Series</dcterms:isRequiredBy>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:title>The_Elder_Scrolls_V:Skyrim</dcterms:title>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<vgo:creator>Todd Howard</vgo:creator>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<vgo:hasGameGenre rdf:resource=""/>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<foaf:mbox>johnnyphones@gmail.com</foaf:mbox>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<schema-org:contentRating>AO</schema-org:contentRating>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<schema-org:price>39.99</schema-org:price>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<isInstalled>
+				true
+			</isInstalled>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<schema-org:genre>Fantasy</schema-org:genre>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:hasPart>Title</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:hasPart>designerName</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:hasPart>isInstalled</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:hasPart>price</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:hasPart>paymentMethod</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:hasPart>esrbRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:hasPart>gameRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:hasPart>genre</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="The_Elder_Scrolls_V:Skyrim">
+		<dcterms:isRequiredBy>Series</dcterms:isRequiredBy>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="Shadow_Quest">
+		<rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:title>Shadow_Quest</dcterms:title>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<vgo:creator>Emily Mary-Jane Walker</vgo:creator>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<vgo:hasGameGenre rdf:resource=""/>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<fibo-loan-spc-crd:CardIdentificationNumber>4035</fibo-loan-spc-crd:CardIdentificationNumber>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<schema-org:contentRating>T</schema-org:contentRating>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<schema-org:price>50.99</schema-org:price>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<isInstalled>false</isInstalled>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<schema-org:genre>Action RPG</schema-org:genre>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:hasPart>Title</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:hasPart>designerNameExtended</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:hasPart>isInstalled</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:hasPart>price</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:hasPart>paymentMethod</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:hasPart>esrbRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:hasPart>gameRating</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:hasPart>genre</dcterms:hasPart>
+	</rdf:Description><rdf:Description rdf:about="Shadow_Quest">
+		<dcterms:isRequiredBy>Series</dcterms:isRequiredBy>
+	</rdf:Description>
+
+	
+</rdf:RDF>
